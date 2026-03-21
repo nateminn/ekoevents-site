@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | EKO Wedding Films - Wedding Videography Tips &amp; Guides</title>
+    <meta name="description" content="Wedding planning tips, venue guides, and real wedding stories from EKO Wedding Videography. Dorset, Hampshire and South England wedding inspiration.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --light-grey: #f2f2f2;
+            --mid-grey: #e0e0e0;
+            --text-dark: #2c2c2c;
+            --text-body: #555555;
+            --text-light: #888888;
+            --dark-bg: #1a1a1a;
+            --accent: #c5a47e;
+            --accent-hover: #b8935e;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--text-body);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── NAV ── */
+        .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0; transition: all 0.35s; }
+        .nav.scrolled { background: var(--white); padding: 12px 0; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+        .nav .container { display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo img { height: 38px; width: auto; }
+        .nav-logo .logo-white { display: block; }
+        .nav-logo .logo-dark { display: none; }
+        .nav.scrolled .nav-logo .logo-white { display: none; }
+        .nav.scrolled .nav-logo .logo-dark { display: block; }
+        .nav-links { display: flex; gap: 28px; list-style: none; align-items: center; }
+        .nav-links a { font-size: 13px; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.85); transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--white); }
+        .nav.scrolled .nav-links a { color: var(--text-body); }
+        .nav.scrolled .nav-links a:hover, .nav.scrolled .nav-links a.active { color: var(--text-dark); }
+        .nav-hitched img { height: 50px; }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+        .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); transition: all 0.3s; }
+        .nav.scrolled .nav-toggle span { background: var(--text-dark); }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: var(--dark-bg);
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 60%, rgba(197,164,126,0.07) 0%, transparent 65%);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .page-hero p {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255,255,255,0.5);
+            max-width: 540px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ── JOURNAL GRID ── */
+        .journal-section {
+            background: var(--off-white);
+            padding: 60px 0 80px;
+        }
+
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        /* ── CARD ── */
+        .card {
+            background: var(--white);
+            border: 1px solid var(--mid-grey);
+            overflow: hidden;
+            transition: box-shadow 0.4s, transform 0.4s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+            transform: translateY(-4px);
+        }
+
+        .card-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .card:hover .card-image img { transform: scale(1.04); }
+
+        .card-tag {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+        }
+
+        .card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: var(--text-light);
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .card-body h3 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .card-body h3 a:hover { color: var(--accent); }
+
+        .card-excerpt {
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--text-body);
+            flex: 1;
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-link:hover { color: var(--accent-hover); }
+
+        .card-link svg {
+            width: 14px;
+            height: 14px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-link svg { transform: translateX(3px); }
+
+        /* ── FEATURED / HERO CARD ── */
+        .featured-card {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            background: var(--white);
+            border: 1px solid var(--mid-grey);
+            overflow: hidden;
+            transition: box-shadow 0.4s;
+            margin-bottom: 12px;
+        }
+
+        .featured-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.07); }
+
+        .featured-card .card-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            object-fit: cover;
+            aspect-ratio: auto;
+        }
+
+        .featured-card .card-body { padding: 40px 36px; justify-content: center; }
+
+        .featured-card h3 {
+            font-family: var(--font-heading);
+            font-size: 26px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+            line-height: 1.3;
+        }
+
+        .featured-label {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        /* ── CTA BAND ── */
+        .cta-band {
+            background: var(--dark-bg);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-band h2 {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .cta-band p {
+            color: rgba(255,255,255,0.6);
+            max-width: 480px;
+            margin: 0 auto 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid var(--white);
+            color: var(--white);
+            background: none;
+        }
+
+        .btn:hover { background: var(--white); color: var(--dark-bg); }
+
+        /* ── FOOTER ── */
+        .footer { background: var(--dark-bg); color: rgba(255,255,255,0.6); padding: 50px 0 30px; border-top: 1px solid rgba(255,255,255,0.06); }
+        .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+        .footer-logo img { height: 32px; margin-bottom: 12px; }
+        .footer-nav { list-style: none; display: flex; gap: 24px; flex-wrap: wrap; }
+        .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.6); transition: color 0.3s; }
+        .footer-nav a:hover { color: var(--white); }
+        .footer-contact-mini { list-style: none; font-size: 13px; }
+        .footer-contact-mini li { padding: 3px 0; }
+        .footer-contact-mini a { color: rgba(255,255,255,0.6); }
+        .footer-contact-mini a:hover { color: var(--white); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; flex-wrap: wrap; gap: 8px; }
+        .footer-bottom a { color: rgba(255,255,255,0.6); }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .journal-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-card { grid-column: 1 / -1; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-hitched { display: none; }
+            .nav-toggle { display: flex; }
+            .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--white); padding: 20px; gap: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+            .nav-links.open a { color: var(--text-body) !important; }
+            .journal-grid { grid-template-columns: 1fr; }
+            .featured-card { grid-template-columns: 1fr; }
+            .featured-card .card-image img { min-height: 220px; }
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <img class="logo-white" src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events">
+            <img class="logo-dark" src="https://www.ekoevents.co.uk/wp-content/uploads/2021/08/New-logo-text-only-1024x351.png" alt="EKO Events">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="journal.html" class="active">Journal</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://www.hitched.co.uk/wedding-videographers/eko-wedding-videography_351667.htm" class="nav-hitched" target="_blank">
+            <img src="https://www.hitched.co.uk/images/sellos/partner--gg351667.png" alt="Hitched.co.uk partner">
+        </a>
+        <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <h1>Journal</h1>
+        <p>Wedding guides, venue inspiration &amp; tips from our experience filming across Dorset &amp; Hampshire.</p>
+    </div>
+</section>
+
+<!-- JOURNAL GRID -->
+<section class="journal-section">
+    <div class="container">
+        <div class="journal-grid">
+
+            <!-- FEATURED POST -->
+            <div class="featured-card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop" alt="Coastal wedding videography Dorset">
+                </div>
+                <div class="card-body">
+                    <p class="featured-label">Latest Post</p>
+                    <h3><a href="coastal-wedding-videography-dorset-hampshire.html">Coastal Wedding Videography in Dorset &amp; Hampshire: The Complete Guide</a></h3>
+                    <p class="card-date">15 March 2026</p>
+                    <p class="card-excerpt">From the Jurassic Coast to the Solent, Dorset and Hampshire offer some of the most dramatic backdrops for wedding films in the country. Here's how to make the most of your coastal celebration on camera.</p>
+                    <a href="coastal-wedding-videography-dorset-hampshire.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 2 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&h=375&fit=crop" alt="Best wedding venues Dorset">
+                    <span class="card-tag">Venues</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">2 March 2026</p>
+                    <h3><a href="best-wedding-venues-dorset-2026.html">12 Best Wedding Venues in Dorset for 2026</a></h3>
+                    <p class="card-excerpt">From clifftop castles to rustic barns, we've filmed at dozens of Dorset venues over the past decade. Here are our top picks for couples planning a 2026 wedding.</p>
+                    <a href="best-wedding-venues-dorset-2026.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 3 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=375&fit=crop" alt="Wedding videographer cost UK">
+                    <span class="card-tag">Tips</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">18 February 2026</p>
+                    <h3><a href="wedding-videographer-cost-uk.html">How Much Does a Wedding Videographer Cost in the UK?</a></h3>
+                    <p class="card-excerpt">A transparent breakdown of what wedding videography costs in 2026, what affects pricing, and how to decide what's right for your budget.</p>
+                    <a href="wedding-videographer-cost-uk.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 4 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=375&fit=crop" alt="New Forest wedding">
+                    <span class="card-tag">Venues</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">4 February 2026</p>
+                    <h3><a href="new-forest-wedding-venues.html">New Forest Wedding Venues: A Videographer's Perspective</a></h3>
+                    <p class="card-excerpt">The New Forest offers everything from country house elegance to woodland charm. We share our favourite venues and the best spots for golden hour footage.</p>
+                    <a href="new-forest-wedding-venues.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 5 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=375&fit=crop" alt="Wedding videography vs photography">
+                    <span class="card-tag">Tips</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">20 January 2026</p>
+                    <h3><a href="do-you-need-wedding-videographer.html">Do You Really Need a Wedding Videographer? 7 Reasons You Won't Regret It</a></h3>
+                    <p class="card-excerpt">Photographs capture moments, but film captures movement, sound, and emotion. Here's why couples consistently say their wedding video was the best money they spent.</p>
+                    <a href="do-you-need-wedding-videographer.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 6 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=375&fit=crop" alt="Highcliffe Castle wedding">
+                    <span class="card-tag">Real Weddings</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">8 January 2026</p>
+                    <h3><a href="real-wedding-highcliffe-castle.html">Real Wedding: A Winter Celebration at Highcliffe Castle</a></h3>
+                    <p class="card-excerpt">When Mr &amp; Mrs Hartley chose Highcliffe Castle for their December wedding, the dramatic clifftop setting delivered breathtaking footage even in winter light.</p>
+                    <a href="real-wedding-highcliffe-castle.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 7 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&h=375&fit=crop" alt="Wedding planning timeline">
+                    <span class="card-tag">Tips</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">15 December 2025</p>
+                    <h3><a href="wedding-planning-timeline.html">Your Complete Wedding Planning Timeline: When to Book Everything</a></h3>
+                    <p class="card-excerpt">From venue to videographer, flowers to favours. A month-by-month checklist so nothing falls through the cracks in the lead-up to your big day.</p>
+                    <a href="wedding-planning-timeline.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 8 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=600&h=375&fit=crop" alt="Hampshire wedding venues">
+                    <span class="card-tag">Venues</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">28 November 2025</p>
+                    <h3><a href="hampshire-wedding-venues-on-film.html">10 Hampshire Wedding Venues That Look Incredible on Film</a></h3>
+                    <p class="card-excerpt">Natural light, beautiful grounds, and character. These Hampshire venues consistently produce stunning wedding films - and we've filmed at every one.</p>
+                    <a href="hampshire-wedding-venues-on-film.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+            <!-- POST 9 -->
+            <div class="card reveal">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&h=375&fit=crop" alt="Sopley Mill wedding">
+                    <span class="card-tag">Real Weddings</span>
+                </div>
+                <div class="card-body">
+                    <p class="card-date">10 November 2025</p>
+                    <h3><a href="real-wedding-sopley-mill.html">Real Wedding: Summer at Sopley Mill with Mr &amp; Mrs York</a></h3>
+                    <p class="card-excerpt">Riverside ceremonies, golden hour portraits, and a reception that lasted until midnight. A look behind the scenes at one of our favourite Dorset weddings.</p>
+                    <a href="real-wedding-sopley-mill.html" class="card-link">Read more <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+    <div class="container">
+        <h2>Ready to discuss your wedding?</h2>
+        <p>We'd love to hear about your plans and how we can capture your day.</p>
+        <a href="contact.html" class="btn">Get in Touch</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo"><img src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events"></div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="footer-contact-mini">
+                <li><a href="tel:01202059325">01202 059325</a></li>
+                <li><a href="mailto:info@ekoevents.co.uk">info@ekoevents.co.uk</a></li>
+                <li>Based in Bournemouth, UK</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span>EKO Events Limited. 2026. Company Number: 13557941</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Nav
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Reveal
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
