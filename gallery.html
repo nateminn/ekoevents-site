@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Gallery | EKO Wedding Films</title>
+    <meta name="description" content="Browse our wedding videography gallery. Cinematic stills from real Dorset and Hampshire weddings captured by EKO Wedding Videography.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #ffffff;
+            --off-white: #f9f9f9;
+            --light-grey: #f2f2f2;
+            --mid-grey: #e0e0e0;
+            --text-dark: #2c2c2c;
+            --text-body: #555555;
+            --text-light: #888888;
+            --dark-bg: #1a1a1a;
+            --accent: #c5a47e;
+            --accent-hover: #b8935e;
+            --font-heading: 'Playfair Display', Georgia, serif;
+            --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--text-body);
+            line-height: 1.7;
+            font-weight: 300;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ── NAV ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.35s ease;
+        }
+
+        .nav.scrolled {
+            background: var(--white);
+            padding: 12px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo img { height: 38px; width: auto; }
+        .nav-logo .logo-white { display: block; }
+        .nav-logo .logo-dark { display: none; }
+        .nav.scrolled .nav-logo .logo-white { display: none; }
+        .nav.scrolled .nav-logo .logo-dark { display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.85);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a.active { color: var(--white); }
+        .nav.scrolled .nav-links a { color: var(--text-body); }
+        .nav.scrolled .nav-links a:hover,
+        .nav.scrolled .nav-links a.active { color: var(--text-dark); }
+
+        .nav-hitched img { height: 50px; }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .nav.scrolled .nav-toggle span { background: var(--text-dark); }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            background: var(--dark-bg);
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 40% 60%, rgba(197,164,126,0.06) 0%, transparent 65%);
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .page-hero p {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(255,255,255,0.55);
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        /* ── FILTER TABS ── */
+        .filters {
+            padding: 40px 0 20px;
+            background: var(--white);
+            position: sticky;
+            top: 62px;
+            z-index: 50;
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 22px;
+            border: 1px solid var(--mid-grey);
+            background: var(--white);
+            color: var(--text-body);
+            font-family: var(--font-body);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+        }
+
+        /* ── MASONRY GALLERY ── */
+        .gallery-section {
+            padding: 40px 0 80px;
+            background: var(--off-white);
+        }
+
+        .masonry {
+            columns: 3;
+            column-gap: 16px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--white);
+            opacity: 0;
+            transform: translateY(16px);
+            animation: itemIn 0.5s forwards;
+        }
+
+        .masonry-item.hidden {
+            display: none;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .masonry-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .masonry-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(26,26,26,0.75) 0%,
+                rgba(26,26,26,0.15) 40%,
+                transparent 100%
+            );
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .masonry-item:hover .masonry-overlay { opacity: 1; }
+
+        .masonry-overlay h4 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+
+        .masonry-overlay span {
+            font-size: 12px;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .masonry-expand {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s, background 0.3s;
+        }
+
+        .masonry-item:hover .masonry-expand { opacity: 1; }
+        .masonry-expand:hover { background: rgba(255,255,255,0.3); }
+
+        .masonry-expand svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--white);
+            stroke-width: 2;
+            fill: none;
+        }
+
+        @keyframes itemIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* stagger */
+        .masonry-item:nth-child(1)  { animation-delay: 0.00s; }
+        .masonry-item:nth-child(2)  { animation-delay: 0.06s; }
+        .masonry-item:nth-child(3)  { animation-delay: 0.12s; }
+        .masonry-item:nth-child(4)  { animation-delay: 0.18s; }
+        .masonry-item:nth-child(5)  { animation-delay: 0.24s; }
+        .masonry-item:nth-child(6)  { animation-delay: 0.30s; }
+        .masonry-item:nth-child(7)  { animation-delay: 0.36s; }
+        .masonry-item:nth-child(8)  { animation-delay: 0.42s; }
+        .masonry-item:nth-child(9)  { animation-delay: 0.48s; }
+        .masonry-item:nth-child(10) { animation-delay: 0.54s; }
+        .masonry-item:nth-child(11) { animation-delay: 0.60s; }
+        .masonry-item:nth-child(12) { animation-delay: 0.66s; }
+        .masonry-item:nth-child(13) { animation-delay: 0.72s; }
+        .masonry-item:nth-child(14) { animation-delay: 0.78s; }
+        .masonry-item:nth-child(15) { animation-delay: 0.84s; }
+        .masonry-item:nth-child(16) { animation-delay: 0.90s; }
+
+        /* ── LIGHTBOX ── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(10,10,10,0.94);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .lightbox.open { display: flex; }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 32px;
+            cursor: pointer;
+            z-index: 10;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-close:hover { opacity: 1; }
+
+        .lightbox-img {
+            max-width: 88vw;
+            max-height: 80vh;
+            object-fit: contain;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .lightbox-caption h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 400;
+            color: var(--white);
+        }
+
+        .lightbox-caption span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background 0.3s;
+        }
+
+        .lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        /* ── CTA BAND ── */
+        .cta-band {
+            background: var(--dark-bg);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .cta-band h2 {
+            font-family: var(--font-heading);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .cta-band p {
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--accent);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s;
+        }
+
+        .btn:hover { background: var(--accent-hover); }
+
+        .btn-outline {
+            background: none;
+            border: 1px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark-bg);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--dark-bg);
+            color: rgba(255,255,255,0.6);
+            padding: 50px 0 30px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo img { height: 32px; margin-bottom: 12px; }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover { color: var(--white); }
+
+        .footer-contact-mini {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .footer-contact-mini li { padding: 3px 0; }
+        .footer-contact-mini a:hover { color: var(--white); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer-bottom a { color: rgba(255,255,255,0.6); }
+        .footer-bottom a:hover { color: var(--white); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .masonry { columns: 2; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-hitched { display: none; }
+            .nav-toggle { display: flex; }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0; right: 0;
+                background: var(--white);
+                padding: 20px;
+                gap: 16px;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.open a { color: var(--text-body) !important; }
+
+            .masonry { columns: 2; column-gap: 10px; }
+            .masonry-item { margin-bottom: 10px; }
+            .filters { top: 56px; }
+        }
+
+        @media (max-width: 480px) {
+            .masonry { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <img class="logo-white" src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events">
+            <img class="logo-dark" src="https://www.ekoevents.co.uk/wp-content/uploads/2021/08/New-logo-text-only-1024x351.png" alt="EKO Events">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://www.hitched.co.uk/wedding-videographers/eko-wedding-videography_351667.htm" class="nav-hitched" target="_blank">
+            <img src="https://www.hitched.co.uk/images/sellos/partner--gg351667.png" alt="Hitched.co.uk partner">
+        </a>
+        <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <h1>Gallery</h1>
+        <p>Moments from real weddings across Dorset, Hampshire &amp; South England.</p>
+    </div>
+</section>
+
+<!-- FILTER TABS -->
+<div class="filters">
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="ceremony">Ceremony</button>
+            <button class="filter-btn" data-filter="reception">Reception</button>
+            <button class="filter-btn" data-filter="preparations">Preparations</button>
+            <button class="filter-btn" data-filter="details">Details</button>
+            <button class="filter-btn" data-filter="portraits">Portraits</button>
+        </div>
+    </div>
+</div>
+
+<!-- MASONRY GALLERY -->
+<section class="gallery-section">
+    <div class="container">
+        <div class="masonry" id="masonry">
+
+            <div class="masonry-item" data-cat="ceremony" onclick="openLightbox(0)">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600&h=800&fit=crop" alt="Ceremony exchange of vows">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Hartley</h4>
+                    <span>Highcliffe Castle, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="preparations" onclick="openLightbox(1)">
+                <img src="https://images.unsplash.com/photo-1595407753234-0882f1e77954?w=600&h=450&fit=crop" alt="Bridal preparations">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Walsh</h4>
+                    <span>Bridal Suite, Italian Villa</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="reception" onclick="openLightbox(2)">
+                <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&h=900&fit=crop" alt="First dance">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs York</h4>
+                    <span>Burley Manor, New Forest</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="details" onclick="openLightbox(3)">
+                <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=400&fit=crop" alt="Wedding rings detail">
+                <div class="masonry-overlay">
+                    <h4>Ring Details</h4>
+                    <span>Sopley Mill, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="portraits" onclick="openLightbox(4)">
+                <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&h=750&fit=crop" alt="Couple portrait golden hour">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Dean</h4>
+                    <span>Lulworth Cove, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="ceremony" onclick="openLightbox(5)">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=600&h=400&fit=crop" alt="Outdoor ceremony">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Hope</h4>
+                    <span>Christchurch Priory</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="reception" onclick="openLightbox(6)">
+                <img src="https://images.unsplash.com/photo-1470290378698-263fa7ca60ab?w=600&h=600&fit=crop" alt="Table setting reception">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Stephens</h4>
+                    <span>The Italian Villa, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="preparations" onclick="openLightbox(7)">
+                <img src="https://images.unsplash.com/photo-1550005809-91ad75fb315f?w=600&h=850&fit=crop" alt="Bride getting ready">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Bouyer</h4>
+                    <span>Preparations, Bridal Suite</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="portraits" onclick="openLightbox(8)">
+                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=600&h=400&fit=crop" alt="Couple walking sunset">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Watts</h4>
+                    <span>Sandbanks, Poole</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="details" onclick="openLightbox(9)">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=500&fit=crop" alt="Floral arrangement detail">
+                <div class="masonry-overlay">
+                    <h4>Floral Details</h4>
+                    <span>Athelhampton House, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="ceremony" onclick="openLightbox(10)">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=600&h=700&fit=crop" alt="Confetti throw">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Loach</h4>
+                    <span>Tithe Barn, Hampshire</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="reception" onclick="openLightbox(11)">
+                <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=600&h=450&fit=crop" alt="Speeches and laughter">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Akers</h4>
+                    <span>Speeches, Evening Reception</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="portraits" onclick="openLightbox(12)">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=600&h=800&fit=crop" alt="Couple portrait by the sea">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Hubbard</h4>
+                    <span>Hengistbury Head, Dorset</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="details" onclick="openLightbox(13)">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=600&h=400&fit=crop" alt="Wedding shoes and bouquet">
+                <div class="masonry-overlay">
+                    <h4>Bridal Details</h4>
+                    <span>Morning Preparations</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="preparations" onclick="openLightbox(14)">
+                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600&h=500&fit=crop" alt="Groomsmen preparations">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Moore</h4>
+                    <span>Groom Preparations</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+            <div class="masonry-item" data-cat="reception" onclick="openLightbox(15)">
+                <img src="https://images.unsplash.com/photo-1478146059778-26028b07395a?w=600&h=700&fit=crop" alt="Evening sparklers">
+                <div class="masonry-overlay">
+                    <h4>Mr &amp; Mrs Lucas</h4>
+                    <span>Sparkler Send-Off</span>
+                </div>
+                <div class="masonry-expand"><svg viewBox="0 0 24 24"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+    <img class="lightbox-img" id="lbImg" src="" alt="">
+    <div class="lightbox-caption">
+        <h4 id="lbTitle"></h4>
+        <span id="lbSub"></span>
+    </div>
+</div>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+    <div class="container">
+        <h2>Love what you see?</h2>
+        <p>Every wedding is unique. Let's discuss how we can capture yours with the same care and attention.</p>
+        <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events">
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="footer-contact-mini">
+                <li><a href="tel:01202059325">01202 059325</a></li>
+                <li><a href="/cdn-cgi/l/email-protection#2940474f46694c42464c5f4c475d5a074a46075c42"><span class="__cf_email__" data-cfemail="a2cbccc4cde2c7c9cdc7d4c7ccd6d18cc1cd8cd7c9">[email&#160;protected]</span></a></li>
+                <li>Based in Bournemouth, UK</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span>EKO Events Limited. 2026. Company Number: 13557941</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Nav
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.masonry-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cat = btn.dataset.filter;
+
+            items.forEach((item, i) => {
+                const match = cat === 'all' || item.dataset.cat === cat;
+                item.classList.toggle('hidden', !match);
+                if (match) {
+                    item.style.animation = 'none';
+                    item.offsetHeight;
+                    item.style.animation = `itemIn 0.4s ${i * 0.04}s forwards`;
+                }
+            });
+        });
+    });
+
+    // Lightbox
+    const visibleItems = () => [...document.querySelectorAll('.masonry-item:not(.hidden)')];
+    let lbIndex = 0;
+
+    function openLightbox(globalIndex) {
+        const allItems = [...document.querySelectorAll('.masonry-item')];
+        const item = allItems[globalIndex];
+        if (!item || item.classList.contains('hidden')) return;
+
+        const vis = visibleItems();
+        lbIndex = vis.indexOf(item);
+        showLbItem(vis[lbIndex]);
+        document.getElementById('lightbox').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function navLightbox(dir) {
+        const vis = visibleItems();
+        lbIndex = (lbIndex + dir + vis.length) % vis.length;
+        showLbItem(vis[lbIndex]);
+    }
+
+    function showLbItem(item) {
+        const img = item.querySelector('img');
+        const title = item.querySelector('.masonry-overlay h4');
+        const sub = item.querySelector('.masonry-overlay span');
+        document.getElementById('lbImg').src = img.src.replace(/w=600/, 'w=1200').replace(/h=\d+/, 'h=1200');
+        document.getElementById('lbTitle').textContent = title ? title.textContent : '';
+        document.getElementById('lbSub').textContent = sub ? sub.textContent : '';
+    }
+
+    // Keyboard nav
+    document.addEventListener('keydown', e => {
+        if (!document.getElementById('lightbox').classList.contains('open')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight

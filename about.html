@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorset Hampshire Wedding Videographers | Husband & Wife Team</title>
+    <meta name="description" content="Meet EKO Wedding Videography - Dorset and Hampshire's husband and wife wedding videography team based in Bournemouth. Natural, candid wedding films.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --white: #ffffff;
+            --cream: #faf8f5;
+            --warm-grey: #f4f1ed;
+            --sand: #ece7df;
+            --mid-grey: #d4cfc8;
+            --text-dark: #1e1e1e;
+            --text-body: #4a4a4a;
+            --text-light: #8a8580;
+            --dark-bg: #141210;
+            --dark-bg-card: #1c1a17;
+            --gold: #b8956a;
+            --gold-light: #d4b896;
+            --gold-glow: rgba(184, 149, 106, 0.12);
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-accent: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Lato', 'Helvetica Neue', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--text-body);
+            line-height: 1.75;
+            font-weight: 300;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── DECORATIVE ELEMENTS ── */
+        .gold-rule {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 auto 28px;
+        }
+
+        .gold-rule-left {
+            margin: 0 0 28px 0;
+        }
+
+        .section-number {
+            font-family: var(--font-accent);
+            font-size: 13px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* ── FILM GRAIN OVERLAY ── */
+        .grain::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.035;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 200px;
+        }
+
+        /* ── NAVIGATION ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 22px 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav.scrolled {
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(16px);
+            padding: 14px 0;
+            box-shadow: 0 1px 0 var(--sand);
+        }
+
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo img { height: 36px; width: auto; }
+        .nav-logo .logo-white { display: block; }
+        .nav-logo .logo-dark { display: none; }
+        .nav.scrolled .nav-logo .logo-white { display: none; }
+        .nav.scrolled .nav-logo .logo-dark { display: block; }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.75);
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a.active { color: var(--white); }
+
+        .nav.scrolled .nav-links a { color: var(--text-light); }
+        .nav.scrolled .nav-links a:hover,
+        .nav.scrolled .nav-links a.active { color: var(--text-dark); }
+
+        .nav-hitched img { height: 48px; opacity: 0.8; transition: opacity 0.3s; }
+        .nav-hitched:hover img { opacity: 1; }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .nav-toggle span {
+            display: block; width: 22px; height: 1.5px;
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .nav.scrolled .nav-toggle span { background: var(--text-dark); }
+
+        /* ── PAGE HERO ── */
+        .page-hero {
+            position: relative;
+            background: var(--dark-bg);
+            padding: 180px 0 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 80%, var(--gold-glow), transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(184,149,106,0.06), transparent 40%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(42px, 6vw, 64px);
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .page-hero .subtitles h3 {
+            font-family: var(--font-accent);
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--gold-light);
+            line-height: 1.6;
+        }
+
+        .hero-decorative-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin: 32px auto 0;
+        }
+
+        /* ── SECTIONS ── */
+        section { padding: 100px 0; }
+
+        /* ── INTRO ── */
+        .intro { background: var(--white); }
+
+        .intro-inner {
+            text-align: center;
+        }
+
+        .intro-inner h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .intro-inner .lead {
+            font-family: var(--font-accent);
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 32px;
+        }
+
+        .intro-inner p {
+            max-width: 660px;
+            margin: 0 auto 18px;
+            line-height: 1.85;
+        }
+
+        /* ── TWO COLUMN EDITORIAL ── */
+        .editorial {
+            position: relative;
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .editorial-text h2 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .editorial-text p {
+            margin-bottom: 16px;
+            line-height: 1.85;
+        }
+
+        .editorial-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .editorial-img-inner {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, var(--warm-grey) 0%, var(--sand) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .editorial-img-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .editorial-img-frame {
+            position: absolute;
+            inset: 14px;
+            border: 1px solid var(--gold);
+            opacity: 0.25;
+            pointer-events: none;
+        }
+
+        .editorial-img-tag {
+            position: absolute;
+            bottom: 28px;
+            left: 28px;
+            font-family: var(--font-accent);
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 300;
+        }
+
+        .serving-tag {
+            margin-top: 20px;
+            padding: 16px 20px;
+            background: var(--warm-grey);
+            border-left: 3px solid var(--gold);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .serving-tag strong {
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 38px;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 24px;
+            position: relative;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .btn-gold:hover {
+            background: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .btn-outline-dark {
+            background: none;
+            border: 1px solid var(--text-dark);
+            color: var(--text-dark);
+        }
+
+        .btn-outline-dark:hover {
+            background: var(--text-dark);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .btn-arrow {
+            transition: transform 0.3s;
+        }
+
+        .btn:hover .btn-arrow {
+            transform: translateX(4px);
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials {
+            position: relative;
+            background: var(--dark-bg);
+            color: var(--white);
+            text-align: center;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to bottom, var(--cream), var(--dark-bg));
+        }
+
+        .testimonials::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(to top, var(--white), var(--dark-bg));
+        }
+
+        .testimonial-slider {
+            max-width: 660px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            min-height: 200px;
+        }
+
+        .testimonial-large-quote {
+            font-family: var(--font-display);
+            font-size: 120px;
+            color: var(--gold);
+            opacity: 0.15;
+            line-height: 1;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .testimonial-item { display: none; position: relative; z-index: 2; }
+        .testimonial-item.active { display: block; }
+
+        .testimonial-quote {
+            font-family: var(--font-accent);
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 28px;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gold-light);
+            letter-spacing: 1px;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .testimonial-dot.active {
+            background: var(--gold);
+            box-shadow: 0 0 12px var(--gold-glow);
+        }
+
+        /* ── OUR STORY ── */
+        .story { background: var(--white); }
+
+        .story-inner {
+            text-align: center;
+        }
+
+        .story-inner h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .story-inner p {
+            max-width: 660px;
+            margin: 0 auto 18px;
+            line-height: 1.85;
+        }
+
+        /* ── WHAT MAKES US DIFFERENT ── */
+        .different {
+            background: var(--cream);
+            position: relative;
+        }
+
+        .different-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .different-heading h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .diff-card {
+            background: var(--white);
+            padding: 44px 32px 40px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+
+        .diff-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--gold);
+            opacity: 0;
+            transition: opacity 0.4s, width 0.4s;
+        }
+
+        .diff-card:hover {
+            border-color: var(--sand);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+            transform: translateY(-6px);
+        }
+
+        .diff-card:hover::before {
+            opacity: 1;
+            width: 60px;
+        }
+
+        .diff-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .diff-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .diff-card h3 {
+            font-family: var(--font-display);
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 14px;
+        }
+
+        .diff-card p {
+            font-size: 14px;
+            line-height: 1.85;
+            color: var(--text-body);
+        }
+
+        .diff-bottom-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            margin-top: 28px;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── WORKING WITH US ── */
+        .working { background: var(--white); }
+
+        .working-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .working-text h2 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .working-text p {
+            margin-bottom: 16px;
+            line-height: 1.85;
+        }
+
+        /* ── PROMISE ── */
+        .promise {
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0;
+        }
+
+        .promise-inner {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .promise h3 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .promise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--dark-bg-card);
+            border: 1px solid rgba(184,149,106,0.1);
+            transition: border-color 0.3s;
+        }
+
+        .promise-item:hover {
+            border-color: rgba(184,149,106,0.3);
+        }
+
+        .promise-check {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1px;
+        }
+
+        .promise-check svg {
+            width: 11px;
+            height: 11px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .promise-item span {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            line-height: 1.6;
+        }
+
+        /* ── LOACH QUOTE ── */
+        .featured-quote {
+            background: var(--cream);
+            padding: 100px 0;
+        }
+
+        .featured-quote-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .featured-quote-mark {
+            font-family: var(--font-display);
+            font-size: 100px;
+            color: var(--gold);
+            opacity: 0.2;
+            line-height: 1;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .featured-quote blockquote {
+            font-family: var(--font-accent);
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 300;
+            line-height: 1.85;
+            color: var(--text-body);
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured-quote cite {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            color: var(--gold);
+            letter-spacing: 1px;
+        }
+
+        /* ── TEAM PHOTO ── */
+        .team-photo {
+            background: var(--white);
+            padding: 80px 0;
+        }
+
+        .team-photo-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .team-photo-inner img {
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .team-photo-frame {
+            position: absolute;
+            inset: -12px;
+            border: 1px solid var(--gold);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .team-photo-caption {
+            text-align: center;
+            margin-top: 24px;
+            font-family: var(--font-accent);
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        /* ── CONTACT ── */
+        .contact { background: var(--cream); }
+
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contact-heading h2 {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .contact-heading h3 {
+            font-family: var(--font-accent);
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .contact-info p {
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+
+        .contact-details {
+            list-style: none;
+            margin-top: 28px;
+        }
+
+        .contact-details li {
+            padding: 10px 0;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-details svg {
+            width: 16px;
+            height: 16px;
+            stroke: var(--gold);
+            fill: none;
+            stroke-width: 1.5;
+            flex-shrink: 0;
+        }
+
+        .contact-details a:hover { color: var(--gold); }
+
+        .form-group { margin-bottom: 20px; }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            border: 1px solid var(--mid-grey);
+            background: var(--white);
+            color: var(--text-dark);
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 300;
+            padding: 14px 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            outline: none;
+            border-radius: 0;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+
+        .form-group textarea { min-height: 130px; resize: vertical; }
+
+        .form-consent {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .form-consent input[type="checkbox"] {
+            margin-top: 2px;
+            accent-color: var(--gold);
+        }
+
+        .form-consent a { color: var(--gold); }
+
+        .form-submit {
+            display: inline-block;
+            padding: 16px 48px;
+            background: var(--gold);
+            color: var(--white);
+            border: none;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s;
+            border-radius: 0;
+        }
+
+        .form-submit:hover {
+            background: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        /* ── FOOTER ── */
+        .footer {
+            background: var(--dark-bg);
+            color: rgba(255,255,255,0.5);
+            padding: 60px 0 36px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 40px;
+            margin-bottom: 44px;
+            flex-wrap: wrap;
+        }
+
+        .footer-logo img { height: 30px; opacity: 0.7; }
+
+        .footer-nav {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+            transition: color 0.3s;
+        }
+
+        .footer-nav a:hover { color: var(--gold-light); }
+
+        .footer-contact-mini {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .footer-contact-mini li { padding: 3px 0; }
+        .footer-contact-mini a:hover { color: var(--gold-light); }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer-bottom a { color: rgba(255,255,255,0.45); }
+        .footer-bottom a:hover { color: var(--gold-light); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .diff-grid { grid-template-columns: repeat(2, 1fr); }
+            .diff-bottom-row { grid-template-columns: 1fr; max-width: 400px; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 70px 0; }
+            .nav-links, .nav-hitched { display: none; }
+            .nav-toggle { display: flex; }
+
+            .nav-links.open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%; left: 0; right: 0;
+                background: var(--white);
+                padding: 24px;
+                gap: 16px;
+                box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            }
+
+            .nav-links.open a { color: var(--text-body) !important; }
+            .nav-links.open a::after { display: none; }
+
+            .editorial-grid { grid-template-columns: 1fr; gap: 40px; }
+            .editorial-img { order: -1; }
+            .diff-grid { grid-template-columns: 1fr; }
+            .diff-bottom-row { grid-template-columns: 1fr; max-width: none; }
+            .working-inner { grid-template-columns: 1fr; gap: 40px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .promise-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        .reveal-delay-5 { transition-delay: 0.5s; }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-32px);
+            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(32px);
+            transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-left.visible,
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+    <div class="container">
+        <a href="index.html" class="nav-logo">
+            <img class="logo-white" src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events">
+            <img class="logo-dark" src="https://www.ekoevents.co.uk/wp-content/uploads/2021/08/New-logo-text-only-1024x351.png" alt="EKO Events">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="https://www.hitched.co.uk/wedding-videographers/eko-wedding-videography_351667.htm" class="nav-hitched" target="_blank">
+            <img src="https://www.hitched.co.uk/images/sellos/partner--gg351667.png" alt="Hitched.co.uk partner">
+        </a>
+        <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero grain">
+    <div class="container">
+        <div class="page-hero-content">
+            <span class="section-number">About Us</span>
+            <h1>About</h1>
+            <div class="subtitles">
+                <h3>Celebrating Love, Capturing Moments.</h3>
+                <h3>Your Wedding, Our Cinematic Story.</h3>
+            </div>
+            <div class="hero-decorative-line"></div>
+        </div>
+    </div>
+</section>
+
+<!-- HERE AT EKO -->
+<section class="intro">
+    <div class="container">
+        <div class="intro-inner">
+            <div class="reveal">
+                <span class="section-number">Welcome</span>
+                <h2>Here at EKO</h2>
+                <div class="gold-rule"></div>
+            </div>
+            <p class="lead reveal reveal-delay-1">Experience the magic of Dorset and Hampshire's premier husband and wife wedding videography team.</p>
+            <p class="reveal reveal-delay-2">We specialise in capturing natural, authentic love stories across Dorset, Hampshire, and South England - preserving the genuine emotions and candid moments that make your day uniquely yours.</p>
+            <p class="reveal reveal-delay-3">Based in Bournemouth, we bring over a decade of expertise in wedding videography to every celebration. As a married couple ourselves, we understand the emotions and significance of your wedding day. This personal connection allows us to anticipate those fleeting moments - the look between you during your vows, your parents' proud tears, the spontaneous laughter with friends - and capture them beautifully and discreetly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- YOUR LOVE STORY -->
+<section class="editorial" style="background:var(--cream);">
+    <div class="container">
+        <div class="editorial-grid">
+            <div class="editorial-text reveal-left">
+                <span class="section-number">Our Approach</span>
+                <h2>Your Love Story, Naturally Told</h2>
+                <div class="gold-rule gold-rule-left"></div>
+                <p>We believe the best wedding films aren't staged or posed - they're captured as they naturally unfold.</p>
+                <p>Our approach is simple: we blend into your celebration, allowing you to be completely present with your loved ones whilst we document the authentic joy, emotion, and connection that makes your day special. The result? A cinematic film that truly feels like your wedding, not a performance.</p>
+            </div>
+            <div class="editorial-img reveal-right">
+                <div class="editorial-img-inner">
+                    <div class="editorial-img-frame"></div>
+                    <span class="editorial-img-tag">Candid Moments</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY HUSBAND & WIFE TEAM -->
+<section class="editorial" style="background:var(--white);">
+    <div class="container">
+        <div class="editorial-grid">
+            <div class="editorial-img reveal-left">
+                <div class="editorial-img-inner">
+                    <div class="editorial-img-frame"></div>
+                    <span class="editorial-img-tag">Together Since Day One</span>
+                </div>
+            </div>
+            <div class="editorial-text reveal-right">
+                <span class="section-number">The EKO Difference</span>
+                <h2>Why Choose a Husband and Wife Team?</h2>
+                <div class="gold-rule gold-rule-left"></div>
+                <p>Working as a married couple gives us unique insight into wedding day emotions.</p>
+                <p>We've experienced our own wedding, so we know which moments matter most. Our seamless coordination means comprehensive coverage - whilst one of us captures your ceremony, the other is ready for those candid guest reactions and intimate family moments. We work together intuitively, ensuring nothing precious is missed whilst remaining completely unobtrusive.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COVERING DORSET -->
+<section class="editorial" style="background:var(--cream);">
+    <div class="container">
+        <div class="editorial-grid">
+            <div class="editorial-text reveal-left">
+                <span class="section-number">Our Reach</span>
+                <h2>Covering Dorset, Hampshire &amp; South England</h2>
+                <div class="gold-rule gold-rule-left"></div>
+                <p>From intimate coastal ceremonies and enchanting countryside celebrations to elegant manor house weddings - we travel wherever your love story takes you.</p>
+                <p>We know the beautiful venues across Dorset and Hampshire intimately, understanding how natural light moves through each space and where those perfect candid moments tend to happen.</p>
+                <div class="serving-tag">
+                    <strong>Serving:</strong> Bournemouth, Poole, Christchurch, Dorset Coast, Winchester, Southampton, New Forest, Portsmouth, and destinations across South England.
+                </div>
+                <a href="contact.html" class="btn btn-gold">Get in Touch <span class="btn-arrow">&rarr;</span></a>
+            </div>
+            <div class="editorial-img reveal-right">
+                <div class="editorial-img-inner">
+                    <div class="editorial-img-frame"></div>
+                    <span class="editorial-img-tag">South England</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials grain">
+    <div class="container">
+        <div class="testimonial-slider">
+            <div class="testimonial-large-quote">&ldquo;</div>
+            <div class="testimonial-item active" data-index="0">
+                <p class="testimonial-quote">EKO turned our wedding day at Burley Manor into a timeless tale. Their professionalism and artistic eye captured every cherished moment, creating memories we relive every year. They went above and beyond, fulfilling our every request and more.</p>
+                <p class="testimonial-author">Mr &amp; Mrs York</p>
+            </div>
+            <div class="testimonial-item" data-index="1">
+                <p class="testimonial-quote">EKO filmed our wedding at the Christchurch Priory and Old Vicarage. The team were very professional and lovely to chat to. We were so happy with our video and the guys captured the most special moments of our day. So lucky to have this footage to treasure forever!</p>
+                <p class="testimonial-author">Mr &amp; Mrs Hope</p>
+            </div>
+            <div class="testimonial-item" data-index="2">
+                <p class="testimonial-quote">From start to finish the EKO team were so helpful. We met them at the wedding show and are so happy we booked them for our wedding! Extremely happy with our film and they were so good with our guests.</p>
+                <p class="testimonial-author">Mr &amp; Mrs Akers</p>
+            </div>
+            <div class="testimonial-dots">
+                <button class="testimonial-dot active" data-index="0"></button>
+                <button class="testimonial-dot" data-index="1"></button>
+                <button class="testimonial-dot" data-index="2"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="story">
+    <div class="container">
+        <div class="story-inner">
+            <div class="reveal">
+                <span class="section-number">Our Journey</span>
+                <h2>Our Story</h2>
+                <div class="gold-rule"></div>
+            </div>
+            <p class="reveal reveal-delay-1">We launched EKO Wedding Videography following our own wedding, when we realised how quickly the day passes and how precious those authentic moments become.</p>
+            <p class="reveal reveal-delay-2">What began as a love for storytelling has grown into a dedicated service capturing genuine emotions and real connections. Every wedding reminds us why we're passionate about this work - it's about preserving the laughter, tears, joy, and love that make each celebration unique. These aren't just wedding films; they're family heirlooms that become more treasured with every anniversary.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="different">
+    <div class="container">
+        <div class="different-heading reveal">
+            <span class="section-number">Our Edge</span>
+            <h2>What makes us different</h2>
+            <div class="gold-rule"></div>
+        </div>
+        <div class="diff-grid">
+            <div class="diff-card reveal reveal-delay-1">
+                <div class="diff-icon">
+                    <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16"/><path d="M14 20 L18 24 L26 16"/></svg>
+                </div>
+                <h3>Natural &amp; Unobtrusive</h3>
+                <p>We don't direct or stage your day. Instead, we document it as it naturally unfolds, capturing candid moments that reveal the authentic emotions and connections that make your celebration special.</p>
+            </div>
+            <div class="diff-card reveal reveal-delay-2">
+                <div class="diff-icon">
+                    <svg viewBox="0 0 40 40"><path d="M20 8 C14 8 8 13 8 20 C8 28 16 34 20 36 C24 34 32 28 32 20 C32 13 26 8 20 8Z"/></svg>
+                </div>
+                <h3>Personal Understanding</h3>
+                <p>As a married couple, we bring genuine empathy to every wedding. We've experienced the nerves, joy, and overwhelming love of a wedding day, and this helps us anticipate and capture those meaningful moments others might miss.</p>
+            </div>
+            <div class="diff-card reveal reveal-delay-3">
+                <div class="diff-icon">
+                    <svg viewBox="0 0 40 40"><rect x="6" y="12" width="12" height="18" rx="2"/><rect x="22" y="8" width="12" height="22" rx="2"/><path d="M12 21 L22 19"/></svg>
+                </div>
+                <h3>Dual Perspective Coverage</h3>
+                <p>Two videographers working in perfect harmony means comprehensive coverage without disruption. We're positioned to capture both the main action and the candid reactions, the grand moments and the quiet, intimate exchanges.</p>
+            </div>
+        </div>
+        <div class="diff-bottom-row">
+            <div class="diff-card reveal reveal-delay-1">
+                <div class="diff-icon">
+                    <svg viewBox="0 0 40 40"><circle cx="20" cy="16" r="5"/><path d="M8 34 C8 26 14 22 20 22 C26 22 32 26 32 34"/><path d="M28 10 L32 6 M32 10 L28 6"/></svg>
+                </div>
+                <h3>Dorset &amp; Hampshire Specialists</h3>
+                <p>Years of filming across both counties means we understand local venues, lighting conditions, and those perfect spots for natural couple portraits.</p>
+            </div>
+            <div class="diff-card reveal reveal-delay-2">
+                <div class="diff-icon">
+                    <svg viewBox="0 0 40 40"><path d="M8 30 L8 14 L20 8 L32 14 L32 30"/><path d="M14 18 L14 28"/><path d="M20 16 L20 28"/><path d="M26 18 L26 28"/></svg>
+                </div>
+                <h3>Professional Quality</h3>
+                <p>Equipped with professional cameras, audio equipment, and backup systems, we ensure every vow and heartfelt moment is captured with crystal-clear quality.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORKING WITH US -->
+<section class="working">
+    <div class="container">
+        <div class="working-inner">
+            <div class="reveal-left">
+                <div class="editorial-img">
+                    <div class="editorial-img-inner">
+                        <img src="https://www.ekoevents.co.uk/wp-content/uploads/2025/11/IMG_4014_Original-scaled-e1764537360742-768x520.jpg" alt="Ryan &amp; Beth - EKO Wedding Videography">
+                        <div class="editorial-img-frame"></div>
+                        <span class="editorial-img-tag">Ryan &amp; Beth</span>
+                    </div>
+                </div>
+            </div>
+            <div class="working-text reveal-right">
+                <span class="section-number">The Experience</span>
+                <h2>Working with us</h2>
+                <div class="gold-rule gold-rule-left"></div>
+                <p>From our first conversation to delivering your finished film, we're dedicated to making the videography experience effortless and enjoyable.</p>
+                <p>We take time to understand your unique story, discuss your vision, and ensure you feel completely comfortable on camera (even if you think you're not photogenic - trust us, everyone is on their wedding day!).</p>
+                <p>On your wedding day, you'll barely notice we're there. We move quietly through your celebration, capturing the authentic moments without interrupting the flow. No awkward posing, no disrupting conversations - just natural, beautiful documentation of your day as it happens.</p>
+                <a href="contact.html" class="btn btn-outline-dark">Book Now <span class="btn-arrow">&rarr;</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROMISE -->
+<section class="promise grain">
+    <div class="container">
+        <div class="promise-inner">
+            <div class="reveal">
+                <span class="section-number" style="color:var(--gold-light);">Our Commitment</span>
+                <h3>Our Promise</h3>
+                <div class="gold-rule" style="margin-bottom:40px;"></div>
+            </div>
+            <div class="promise-grid">
+                <div class="promise-item reveal reveal-delay-1">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Discreet, professional service throughout your day</span>
+                </div>
+                <div class="promise-item reveal reveal-delay-2">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Natural, candid filming that captures authentic emotions</span>
+                </div>
+                <div class="promise-item reveal reveal-delay-3">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Crystal-clear audio of your vows and speeches</span>
+                </div>
+                <div class="promise-item reveal reveal-delay-4">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Beautiful cinematic editing that tells your unique story</span>
+                </div>
+                <div class="promise-item reveal reveal-delay-5">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Films delivered within 10 weeks of your wedding</span>
+                </div>
+                <div class="promise-item reveal reveal-delay-5">
+                    <div class="promise-check"><svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3"/></svg></div>
+                    <span>Fully insured with professional backup equipment</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED QUOTE -->
+<section class="featured-quote">
+    <div class="container">
+        <div class="featured-quote-inner reveal">
+            <div class="featured-quote-mark">&ldquo;</div>
+            <blockquote>Ryan and Beth are so friendly, they faded into the background on the day, made us feel at ease throughout, was prompt and professional leading up to it, but most importantly they really captured the essence of the day. The film quality is excellent and the turn around time to get the edited footage back to us was quick. The drone footage also gave the video some context of where we got married which really added to the film. We would 100% recommend them to anyone!!</blockquote>
+            <cite>Mr &amp; Mrs Loach</cite>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact-heading reveal">
+            <span class="section-number">Say Hello</span>
+            <h2>Get in touch!</h2>
+            <h3>Let's discuss your wedding videography...</h3>
+            <div class="gold-rule" style="margin-top:20px;"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <p>We'd love to hear about your wedding plans! Whether you're getting married in Dorset, Hampshire, or across South England, we're here to answer your questions and discuss how we can capture your special day.</p>
+                <p>As a husband and wife wedding videography team based in Bournemouth, we understand how important it is to find videographers you trust and connect with.</p>
+                <p>We typically respond within 24 hours and are happy to arrange a phone call, video chat, or in-person meeting at your convenience.</p>
+                <ul class="contact-details">
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:01202059325">01202 059325</a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="/cdn-cgi/l/email-protection#3a53545c557a5f51555f4c5f544e49145955144f51"><span class="__cf_email__" data-cfemail="c3aaada5ac83a6a8aca6b5a6adb7b0eda0acedb6a8">[email&#160;protected]</span></a>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Based in Bournemouth, UK
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                        Covering Dorset, Hampshire &amp; South England
+                    </li>
+                </ul>
+            </div>
+            <form class="reveal-right" onsubmit="event.preventDefault();alert('Message sent! We will be in touch soon.');">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form-consent">
+                    <input type="checkbox" id="consent" required>
+                    <label for="consent" style="font-size:12px;color:var(--text-light);text-transform:none;letter-spacing:0;">I agree to the storage and handling of my data by this website. For further information, please read our <a href="privacy-policy.html">Privacy Policy</a>.</label>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="https://www.ekoevents.co.uk/wp-content/uploads/2024/01/New-logo-text-only-white-1024x352.png" alt="EKO Events">
+            </div>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="journal.html">Journal</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="faqs.html">FAQs</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <ul class="footer-contact-mini">
+                <li><a href="tel:01202059325">01202 059325</a></li>
+                <li><a href="/cdn-cgi/l/email-protection#61080f070e21040a0e0417040f15124f020e4f140a"><span class="__cf_email__" data-cfemail="c5acaba3aa85a0aeaaa0b3a0abb1b6eba6aaebb0ae">[email&#160;protected]</span></a></li>
+                <li>Based in Bournemouth, UK</li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <span>EKO Events Limited. 2026. Company Number: 13557941</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Nav scroll
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80);
+    });
+
+    // Testimonial carousel
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const items = document.querySelectorAll('.testimonial-item');
+    let current = 0;
+    function showSlide(i) {
+        items.forEach(el => el.classList.remove('active'));
+        dots.forEach(el => el.classList.remove('active'));
+        items[i].classList.add('active');
+        dots[i].classList.add('active');
+        current = i;
+    }
+    dots.forEach(d => d.addEventListener('click', () => showSlide(+d.dataset.index)));
+    setInterval(() => showSlide((current + 1) % 
